@@ -1,19 +1,33 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { useState } from "react";
-import { Logo, type LogoColors } from "./components/Logo";
+import { Logo } from "./components/Logo";
 import { Editor } from "./components/Editor";
+import { useColors } from "./components/colors/useColors";
+import { useEffect } from "react";
 
 export const App = () => {
-    const [saves, setSaves] = useState<LogoColors[]>([]);
+    const { colorsList } = useColors();
+
+    useEffect(() => {
+        console.log("colorsList equals:", colorsList);
+    }, [colorsList]);
 
     return (
         <div className="App d-md-flex flex-column align-items-center">
             <h1 className="Title text-center">Marvel TTRPG Logo Editor</h1>
-            <Editor addSave={save => setSaves([save])} />
-            {saves.map(colors => (
-                <Logo {...colors} />
-            ))}
+            <Editor />
+            <h1 className="Title text-center">My Gallery</h1>
+            {colorsList.length > 0 ?
+                <div className="d-flex flex-wrap">
+                    {colorsList.map((colors, index) => (
+                        <Logo
+                            colors={colors}
+                            key={index}
+                            id={`my-gallery-${index}`}
+                        />
+                    ))}
+                </div>
+            :   <p>No Logos in Gallery yet. Press "Save" to add one!</p>}
         </div>
     );
 };

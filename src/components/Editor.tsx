@@ -1,13 +1,10 @@
 import { useState } from "react";
 import { ColorPicker } from "./ColorPicker";
-import { DEFAULT_COLORS, Logo, type LogoColors } from "./Logo";
+import { DEFAULT_COLORS, Logo } from "./Logo";
 import { Button } from "react-bootstrap";
+import { useColors } from "./colors/useColors";
 
-interface Props {
-    addSave: (save: LogoColors) => unknown;
-}
-
-export const Editor = (props: Props) => {
+export const Editor = () => {
     const [flameBaseColor, setFlameBaseColor] = useState(
         DEFAULT_COLORS.flameBaseColor,
     );
@@ -19,14 +16,19 @@ export const Editor = (props: Props) => {
         DEFAULT_COLORS.backgroundColor,
     );
 
+    const { addColors } = useColors();
+
     return (
         <div className="Editor">
             <div className="d-flex justify-content-center">
                 <Logo
-                    flameBaseColor={flameBaseColor}
-                    flameTipColor={flameTipColor}
-                    letterColor={letterColor}
-                    backgroundColor={backgroundColor}
+                    colors={{
+                        flameBaseColor,
+                        flameTipColor,
+                        letterColor,
+                        backgroundColor,
+                    }}
+                    id="editor"
                 />
                 <div>
                     <ColorPicker
@@ -57,7 +59,7 @@ export const Editor = (props: Props) => {
             </div>
             <Button
                 onClick={() =>
-                    props.addSave({
+                    addColors({
                         flameBaseColor,
                         flameTipColor,
                         letterColor,
