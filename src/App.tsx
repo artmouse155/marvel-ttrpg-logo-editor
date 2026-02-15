@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { Logo } from "./components/Logo";
 import { Editor } from "./components/Editor";
 import { useColors } from "./components/colors/useColors";
 import { useEffect } from "react";
