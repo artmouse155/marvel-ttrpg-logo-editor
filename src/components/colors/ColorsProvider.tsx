@@ -32,7 +32,7 @@ export const ColorsProvider: React.FC<Props> = ({ children }) => {
     };
 
     const deleteColorsAtIndex = (index: number) => {
-        setColorsList(prevColors => prevColors.splice(index, 1));
+        setColorsList(prevColors => prevColors.toSpliced(index, 1));
     };
 
     const colorsActions = useMemo(

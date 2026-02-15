@@ -4,9 +4,10 @@ import { Logo } from "./components/Logo";
 import { Editor } from "./components/Editor";
 import { useColors } from "./components/colors/useColors";
 import { useEffect } from "react";
+import { GalleryItem } from "./components/GalleryItem";
 
 export const App = () => {
-    const { colorsList } = useColors();
+    const { colorsList, deleteColorsAtIndex } = useColors();
 
     useEffect(() => {
         console.log("colorsList equals:", colorsList);
@@ -18,12 +19,12 @@ export const App = () => {
             <Editor />
             <h1 className="Title text-center">My Gallery</h1>
             {colorsList.length > 0 ?
-                <div className="d-flex flex-wrap">
+                <div className="d-flex flex-wrap justify-content-center gap-2">
                     {colorsList.map((colors, index) => (
-                        <Logo
+                        <GalleryItem
                             colors={colors}
-                            key={index}
-                            id={`my-gallery-${index}`}
+                            index={index}
+                            deleteThis={() => deleteColorsAtIndex(index)}
                         />
                     ))}
                 </div>
