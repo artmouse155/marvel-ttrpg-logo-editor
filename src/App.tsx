@@ -1,22 +1,19 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import { useState } from "react";
-import Form from "react-bootstrap/Form";
-import { Logo, DEFAULT_COLORS } from "./Logo";
+import { Logo, type LogoColors } from "./components/Logo";
+import { Editor } from "./components/Editor";
 
 export const App = () => {
-    const [color, setColor] = useState("#563d7c");
+    const [saves, setSaves] = useState<LogoColors[]>([]);
 
     return (
-        <>
-            <Logo {...DEFAULT_COLORS} />
-            <Form.Label htmlFor="exampleColorInput">Color picker</Form.Label>
-            <Form.Control
-                type="color"
-                id="exampleColorInput"
-                value={color}
-                title="Choose your color"
-                onChange={event => setColor(event.target.value)}
-            />
-        </>
+        <div className="App d-md-flex flex-column align-items-center">
+            <h1 className="Title text-center">Marvel TTRPG Logo Editor</h1>
+            <Editor addSave={save => setSaves([save])} />
+            {saves.map(colors => (
+                <Logo {...colors} />
+            ))}
+        </div>
     );
 };
