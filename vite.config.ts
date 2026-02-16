@@ -13,4 +13,5 @@ export default defineConfig({
   server: {
     open: true, // This will open the default browser automatically
   },
+  base: './'
 });

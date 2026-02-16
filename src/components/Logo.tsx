@@ -1,3 +1,5 @@
+import type { Ref } from "react";
+
 export interface LogoColors {
     flameBaseColor: string;
     flameTipColor: string;
@@ -8,6 +10,7 @@ export interface LogoColors {
 interface Props {
     colors: LogoColors;
     id: string;
+    ref?: Ref<SVGSVGElement>;
 }
 
 export const DEFAULT_COLORS: LogoColors = {
@@ -20,6 +23,7 @@ export const DEFAULT_COLORS: LogoColors = {
 export const Logo = (props: Props) => {
     return (
         <svg
+            ref={props.ref}
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
             xmlSpace="preserve"
