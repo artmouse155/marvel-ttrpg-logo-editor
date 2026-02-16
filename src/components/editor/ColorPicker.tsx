@@ -1,7 +1,7 @@
 import { Button, Form } from "react-bootstrap";
 
 interface Props {
-    getColor: () => string;
+    color: string;
     defaultColor: string;
     readonly description: string;
     setColor: (color: string) => unknown;
@@ -13,7 +13,7 @@ export const ColorPicker = (props: Props) => {
     };
 
     const getButtonDisabled = () => {
-        return props.getColor() === props.defaultColor;
+        return props.color === props.defaultColor;
     };
 
     return (
@@ -24,7 +24,7 @@ export const ColorPicker = (props: Props) => {
             <Form.Control
                 type="color"
                 id={"exampleColorInput"}
-                value={props.getColor()}
+                value={props.color}
                 // title="Choose your color"
                 onChange={event => props.setColor(event.target.value)}
                 className="m-2 p-0"

@@ -1,10 +1,11 @@
 import { Dropdown } from "react-bootstrap";
-import { Logo, type LogoColors } from "./Logo";
+import { Logo, type LogoColors } from "../Logo";
 
 interface Props {
     colors: LogoColors;
     index: number;
     deleteThis: () => void;
+    loadThis: () => void;
 }
 
 export const GalleryItem = (props: Props) => {
@@ -12,20 +13,17 @@ export const GalleryItem = (props: Props) => {
         <div className="border rounded p-3">
             <Logo colors={props.colors} id={`my-gallery-${props.index}`} />
             <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                <Dropdown.Toggle variant="secondary" id="dropdown-basic">
                     Actions
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
+                    <Dropdown.Item onClick={props.loadThis}>
+                        ↗️ Load This
+                    </Dropdown.Item>
                     <Dropdown.Item onClick={props.deleteThis}>
                         🗑️ Delete
                     </Dropdown.Item>
-                    {/* <Dropdown.Item href="#/action-2">
-                        Another action
-                    </Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">
-                        Something else
-                    </Dropdown.Item> */}
                 </Dropdown.Menu>
             </Dropdown>
         </div>
