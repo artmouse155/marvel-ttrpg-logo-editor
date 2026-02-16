@@ -46,7 +46,6 @@ export const GalleryColorsProvider: React.FC<Props> = ({ children }) => {
 
     useEffect(() => {
         saveToLocalStorage(colorsList);
-        console.log(colorsList);
     }, [colorsList]);
 
     return (

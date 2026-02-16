@@ -26,7 +26,6 @@ export const GalleryItem = (props: Props) => {
         img.src = image64;
 
         img.onload = function () {
-            console.log(img);
             canvas.getContext("2d")?.drawImage(img, 0, 0);
             const a = document.createElement("a");
             a.download = "logo.png";

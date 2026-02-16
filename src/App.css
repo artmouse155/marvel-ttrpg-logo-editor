@@ -17,6 +17,18 @@ Editor {
         flex-direction: column;
     }
 }
+
+/* @media (max-width: 768px) {
+    .Gallery {
+        scale: 90%;
+        margin: auto;
+    }
+} */
+
+.small-modal {
+    max-width: fit-content;
+    margin: auto;
+}
 /* 
 .App {
     display: flex;

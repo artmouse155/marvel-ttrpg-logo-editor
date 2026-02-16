@@ -15,12 +15,10 @@ export const App = () => {
     const [showDeleteAllModal, setShowDeleteAllModal] = useState(false);
     const [showShareLinkModal, setShowShareLinkModal] = useState(false);
 
-    useEffect(() => {
-        console.log("colorsList equals:", colorsList);
-    }, [colorsList]);
+    useEffect(() => {}, [colorsList]);
 
     return (
-        <div className="App d-md-flex flex-column align-items-center">
+        <div className="App d-flex flex-column align-items-center">
             <Modal
                 show={showShareLinkModal}
                 onHide={() => setShowShareLinkModal(false)}
@@ -119,7 +117,7 @@ export const App = () => {
                             </Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-                    <div className="d-flex flex-wrap justify-content-center gap-2">
+                    <div className="Gallery d-flex flex-wrap justify-content-center gap-2">
                         {colorsList.map((colors, index) => (
                             <GalleryItem
                                 key={index}
