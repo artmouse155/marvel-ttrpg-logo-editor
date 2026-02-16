@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import type { LogoColors } from "../Logo";
-import { ColorsContext } from "./ColorsContext";
+import { GalleryColorsContext } from "./GalleryColorsContext";
 
 const COLORS_LIST_KEY: string = "colorsList";
 
@@ -46,8 +46,8 @@ export const GalleryColorsProvider: React.FC<Props> = ({ children }) => {
     }, [colorsList]);
 
     return (
-        <ColorsContext.Provider value={colorsActions}>
+        <GalleryColorsContext.Provider value={colorsActions}>
             {children}
-        </ColorsContext.Provider>
+        </GalleryColorsContext.Provider>
     );
 };

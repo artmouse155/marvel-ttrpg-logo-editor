@@ -1,4 +1,4 @@
 import { useContext } from "react";
-import { ColorsContext } from "./ColorsContext";
+import { GalleryColorsContext } from "./GalleryColorsContext";
 
-export const useGalleryColors = () => { return useContext(ColorsContext); };
+export const useGalleryColors = () => { return useContext(GalleryColorsContext); };

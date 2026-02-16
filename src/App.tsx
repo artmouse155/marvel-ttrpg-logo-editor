@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { Editor } from "./components/Editor";
+import { Editor } from "./components/editor/Editor";
 import { useGalleryColors } from "./components/gallery/useGalleryColors";
 import { useEffect } from "react";
 import { GalleryItem } from "./components/GalleryItem";

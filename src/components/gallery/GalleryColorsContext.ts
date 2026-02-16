@@ -1,17 +1,17 @@
 import { type Context, createContext } from "react";
 import type { LogoColors } from "../Logo";
 
-interface ColorsActions {
+interface GalleryColorsActions {
     readonly colorsList: LogoColors[];
     addColors: (colors: LogoColors) => void;
     deleteColorsAtIndex: (index: number) => void;
 }
 
-const defaultColorActions: ColorsActions = {
+const defaultColorActions: GalleryColorsActions = {
     colorsList: [],
     addColors: (_: LogoColors) => { },
     deleteColorsAtIndex: (_: number) => { }
 };
 
-export const ColorsContext: Context<ColorsActions> =
-    createContext<ColorsActions>(defaultColorActions);
+export const GalleryColorsContext: Context<GalleryColorsActions> =
+    createContext<GalleryColorsActions>(defaultColorActions);
