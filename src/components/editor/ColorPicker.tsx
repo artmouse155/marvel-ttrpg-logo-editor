@@ -28,15 +28,8 @@ export const ColorPicker = (props: Props) => {
                 id="modal-delete-all"
                 dialogClassName="small-modal"
                 centered
-                // style={{
-                //     position: "fixed",
-                //     maxWidth: "fit-content",
-                // }}
+                animation={false}
             >
-                {/* <Modal.Header closeButton>
-                    <Modal.Title>Edit Color</Modal.Title>
-                </Modal.Header> */}
-                {/* <Modal.Body> */}
                 <Sketch
                     color={props.color}
                     onChange={color => {
@@ -44,7 +37,6 @@ export const ColorPicker = (props: Props) => {
                     }}
                     disableAlpha
                 />
-                {/* </Modal.Body> */}
                 <Modal.Footer>
                     <Button
                         variant="primary"
