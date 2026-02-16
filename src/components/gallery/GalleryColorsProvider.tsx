@@ -35,8 +35,12 @@ export const GalleryColorsProvider: React.FC<Props> = ({ children }) => {
         setColorsList(prevColors => prevColors.toSpliced(index, 1));
     };
 
+    const deleteAllColors = () => {
+        setColorsList([]);
+    };
+
     const colorsActions = useMemo(
-        () => ({ colorsList, addColors, deleteColorsAtIndex }),
+        () => ({ colorsList, addColors, deleteColorsAtIndex, deleteAllColors }),
         [colorsList],
     );
 

@@ -10,14 +10,14 @@
 Editor {
     display: flex;
     flex-direction: row;
-}
+} */
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
     .Editor {
         flex-direction: column;
     }
 }
-
+/* 
 .App {
     display: flex;
     flex-direction: column;

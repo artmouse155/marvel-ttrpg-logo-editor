@@ -5,12 +5,14 @@ interface GalleryColors {
     readonly colorsList: LogoColors[];
     addColors: (colors: LogoColors) => void;
     deleteColorsAtIndex: (index: number) => void;
+    deleteAllColors: () => void;
 }
 
 const defaultGalleryColors: GalleryColors = {
     colorsList: [],
     addColors: (_: LogoColors) => { },
-    deleteColorsAtIndex: (_: number) => { }
+    deleteColorsAtIndex: (_: number) => { },
+    deleteAllColors: () => { }
 };
 
 export const GalleryColorsContext: Context<GalleryColors> =

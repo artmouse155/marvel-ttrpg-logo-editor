@@ -9,45 +9,43 @@ export const Editor = () => {
     const { addColors } = useGalleryColors();
 
     return (
-        <div className="Editor">
-            <div className="d-flex justify-content-center">
-                <Logo colors={colors} id="editor" />
-                <div>
-                    <ColorPicker
-                        color={colors.flameBaseColor}
-                        setColor={flameBaseColor => {
-                            setColors({ ...colors, flameBaseColor });
-                        }}
-                        defaultColor={DEFAULT_COLORS.flameBaseColor}
-                        description="Flame Base Color"
-                    />
-                    <ColorPicker
-                        color={colors.flameTipColor}
-                        setColor={flameTipColor => {
-                            setColors({ ...colors, flameTipColor });
-                        }}
-                        defaultColor={DEFAULT_COLORS.flameTipColor}
-                        description="Flame Tip Color"
-                    />
-                    <ColorPicker
-                        color={colors.letterColor}
-                        setColor={letterColor => {
-                            setColors({ ...colors, letterColor });
-                        }}
-                        defaultColor={DEFAULT_COLORS.letterColor}
-                        description="Letter Color"
-                    />
-                    <ColorPicker
-                        color={colors.backgroundColor}
-                        setColor={backgroundColor => {
-                            setColors({ ...colors, backgroundColor });
-                        }}
-                        defaultColor={DEFAULT_COLORS.backgroundColor}
-                        description="Background Color"
-                    />
-                </div>
+        <div className="Editor d-flex justify-content-center align-items-center">
+            <Logo colors={colors} id="editor" />
+            <div className="p-3 d-flex flex-column align-items-stretch gap-2">
+                <ColorPicker
+                    color={colors.flameBaseColor}
+                    setColor={flameBaseColor => {
+                        setColors({ ...colors, flameBaseColor });
+                    }}
+                    defaultColor={DEFAULT_COLORS.flameBaseColor}
+                    description="Flame Base Color"
+                />
+                <ColorPicker
+                    color={colors.flameTipColor}
+                    setColor={flameTipColor => {
+                        setColors({ ...colors, flameTipColor });
+                    }}
+                    defaultColor={DEFAULT_COLORS.flameTipColor}
+                    description="Flame Tip Color"
+                />
+                <ColorPicker
+                    color={colors.letterColor}
+                    setColor={letterColor => {
+                        setColors({ ...colors, letterColor });
+                    }}
+                    defaultColor={DEFAULT_COLORS.letterColor}
+                    description="Letter Color"
+                />
+                <ColorPicker
+                    color={colors.backgroundColor}
+                    setColor={backgroundColor => {
+                        setColors({ ...colors, backgroundColor });
+                    }}
+                    defaultColor={DEFAULT_COLORS.backgroundColor}
+                    description="Background Color"
+                />
+                <Button onClick={() => addColors(colors)}>Save</Button>
             </div>
-            <Button onClick={() => addColors(colors)}>Save</Button>
         </div>
     );
 };

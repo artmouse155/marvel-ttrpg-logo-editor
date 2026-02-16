@@ -17,7 +17,7 @@ export const ColorPicker = (props: Props) => {
     };
 
     return (
-        <div className="ColorPicker d-flex align-items-center justify-content-end bg-light m-3 border rounded">
+        <div className="ColorPicker d-flex align-items-center justify-content-end bg-light border rounded">
             <Form.Label htmlFor={`color`} className="m-2">
                 {props.description}
             </Form.Label>
