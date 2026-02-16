@@ -1,12 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Editor } from "./components/Editor";
-import { useColors } from "./components/colors/useColors";
+import { useGalleryColors } from "./components/gallery/useGalleryColors";
 import { useEffect } from "react";
 import { GalleryItem } from "./components/GalleryItem";
 
 export const App = () => {
-    const { colorsList, deleteColorsAtIndex } = useColors();
+    const { colorsList, deleteColorsAtIndex } = useGalleryColors();
 
     useEffect(() => {
         console.log("colorsList equals:", colorsList);

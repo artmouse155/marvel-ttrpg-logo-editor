@@ -8,7 +8,7 @@ interface Props {
     children: React.ReactNode;
 }
 
-export const ColorsProvider: React.FC<Props> = ({ children }) => {
+export const GalleryColorsProvider: React.FC<Props> = ({ children }) => {
     const saveToLocalStorage = (colors: LogoColors[]): void => {
         localStorage.setItem(COLORS_LIST_KEY, JSON.stringify(colors));
     };

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ColorPicker } from "./ColorPicker";
 import { DEFAULT_COLORS, Logo } from "./Logo";
 import { Button } from "react-bootstrap";
-import { useColors } from "./colors/useColors";
+import { useGalleryColors } from "./gallery/useGalleryColors";
 
 export const Editor = () => {
     const [flameBaseColor, setFlameBaseColor] = useState(
@@ -16,7 +16,7 @@ export const Editor = () => {
         DEFAULT_COLORS.backgroundColor,
     );
 
-    const { addColors } = useColors();
+    const { addColors } = useGalleryColors();
 
     return (
         <div className="Editor">

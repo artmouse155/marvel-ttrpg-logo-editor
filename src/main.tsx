@@ -1,12 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App.tsx";
-import { ColorsProvider } from "./components/colors/ColorsProvider.tsx";
+import { GalleryColorsProvider } from "./components/gallery/GalleryColorsProvider.tsx";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <ColorsProvider>
+        <GalleryColorsProvider>
             <App />
-        </ColorsProvider>
+        </GalleryColorsProvider>
     </StrictMode>,
 );
