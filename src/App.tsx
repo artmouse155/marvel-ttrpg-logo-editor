@@ -64,7 +64,7 @@ export const App = () => {
             </Modal>
             <Modal
                 show={showDeleteAllModal}
-                onHide={() => setShowDeleteAllModal(true)}
+                onHide={() => setShowDeleteAllModal(false)}
                 id="modal-delete-all"
             >
                 <Modal.Header closeButton>
